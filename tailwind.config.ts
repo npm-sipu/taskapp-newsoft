@@ -5,16 +5,40 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    theme: {
+      extend: {
+        colors: {
+          background: 'var(--background)',
+          foreground: 'var(--foreground)',
+          card: 'var(--card)',
+          cardForeground: 'var(--card-foreground)',
+          popover: 'var(--popover)',
+          popoverForeground: 'var(--popover-foreground)',
+          primary: 'var(--primary)',
+          primaryForeground: 'var(--primary-foreground)',
+          secondary: 'var(--secondary)',
+          secondaryForeground: 'var(--secondary-foreground)',
+          muted: 'var(--muted)',
+          mutedForeground: 'var(--muted-foreground)',
+          accent: 'var(--accent)',
+          accentForeground: 'var(--accent-foreground)',
+          destructive: 'var(--destructive)',
+          destructiveForeground: 'var(--destructive-foreground)',
+          border: 'var(--border)',
+          input: 'var(--input)',
+          ring: 'var(--ring)',
+        },
+        borderRadius: {
+          DEFAULT: '0.5rem',
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+  ],
 };
 export default config;
