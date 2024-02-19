@@ -1,6 +1,7 @@
 import { Text } from "@/components/Common/Text";
 
 import { MAX_PAGE_SIZE } from "@/utils/contsants";
+import { Button } from "flowbite-react";
 
 interface TablePaginationProps {
   pageNumber: number;
@@ -40,25 +41,35 @@ function TablePagination(props: TablePaginationProps) {
           <Text>No Records</Text>
         )}
       </div>
-      <div className='flex gap-5 max-sm:justify-between max-sm:w-full'>
-        <button type='button' onClick={onPreviousPage} disabled={canPrevPage}>
+      <div className='flex gap-4 max-sm:justify-between max-sm:w-full'>
+        <Button
+          type='button'
+          className='mx-2'
+          onClick={onPreviousPage}
+          disabled={canPrevPage}
+        >
           <Text
             className={`${
               canPrevPage ? "cursor-not-allowed text-lightgrey" : ""
-            }`}
+            } text-white`}
           >
             Previous
           </Text>
-        </button>
-        <button type='button' onClick={onNextPage} disabled={canNextPage}>
+        </Button>
+        <Button
+          type='button'
+          className=''
+          onClick={onNextPage}
+          disabled={canNextPage}
+        >
           <Text
             className={`${
               canNextPage ? "cursor-not-allowed text-lightgrey" : ""
-            }`}
+            } text-white`}
           >
             Next
           </Text>
-        </button>
+        </Button>
       </div>
     </div>
   );
