@@ -20,7 +20,7 @@ export default function Home() {
     <main className=''>
       <div className='py-4 px-3 bg-white mt-6 rounded-md shadow-[0px_0px_5px_0px_rgba(16,104,178,0.30)] mb-10'>
         <CustomTable
-          title='Top Sellers'
+          title='Posts'
           columns={tableColumns}
           data={tableData}
           showAdditionalFilters={true}
