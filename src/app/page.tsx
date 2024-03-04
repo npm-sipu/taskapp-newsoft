@@ -5,11 +5,12 @@ import useCustomTableSkeleton from "@/hooks/useCustomTableSkeleton";
 import { useQueryHandler } from "@/hooks/useQueryHandler";
 import { postsData } from "@/lib/baseApi";
 import CustomTable from "@/tables/CustomTable";
+import Loading from "./loading";
 
 export default function Home() {
   const { data, isLoading, isError } = useQueryHandler(["posts"], postsData);
 
-  console.log(data);
+  if (isLoading) <Loading />;
 
   const { tableColumns, tableData } = useCustomTableSkeleton(
     data,
